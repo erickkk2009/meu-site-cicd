@@ -1,25 +1,26 @@
+
 name: Meu Primeiro Pipeline de CI/CD
 
 on:
- push:
-    branches: ["main"]
+  push:
+    branches: [main]
 
 jobs:
   teste-dos-arquivos:
     runs-on: ubuntu-latest
     steps:
-      - name: Passo 1 - Copiar o código para o robô
-        uses: actions/checkout@v4    
+      - name: Copiar o codigo
+        uses: actions/checkout@v4
 
-      - name: Passo 2 - Verificar se o arquivo index.html està na pasta
+      - name: Verificar arquivo HTML
         run: ls index.html
 
   simular-deploy:
     needs: teste-dos-arquivos
     runs-on: ubuntu-latest
     steps:
-    - name: Passo 3 - Simular envio para o servidor
-    run: |
-      echo "Conectando ao servidor..."
-      ech0 "Enviando arquivo index.html..."
-      echo "Sucesso! Seu site está online (Simulado)."  
+      - name: Simular envio para servidor
+        run: |
+          echo "Conectando ao servidor..."
+          echo "Enviando arquivo index.html..."
+          echo "Sucesso! Site online (Simulado)."
