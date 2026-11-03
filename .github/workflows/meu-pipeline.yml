@@ -2,11 +2,11 @@ name: Meu Primeiro Pipeline de CI/CD
 
 on:
  push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   teste-dos-arquivos:
-    runa-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Passo 1 - Copiar o código para o robô
         uses: actions/checkout@v4    
